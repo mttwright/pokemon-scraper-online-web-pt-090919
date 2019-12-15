@@ -33,7 +33,8 @@ class Pokemon
       WHERE id = ?
     SQL
     
-    pokemon_array = db.execute(sql, id)
+    pokemon_array = db.execute(sql, id).first
+    self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], db)
   end
   
   
