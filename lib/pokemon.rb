@@ -1,12 +1,18 @@
 class Pokemon
   
   attr_accessor :id, :name, :type, :db
+  @@all = []
   
   def initialize(id:, name:, type:, db:)
     self.id = id
     self.name = name
     self.type = type
     self.db = db
+    @@all.push(self)
+  end
+  
+  def self.all
+    @@all
   end
   
   def self.save(name, type, db)
@@ -22,7 +28,12 @@ class Pokemon
   end
   
   def self.find(id, db)
+    sql = <<-SQL
+      SELECT * FROM pokemon
+      WHERE id = ?
+    SQL
     
+    pokemon_array = db.execute(sql, id)
   end
   
   
