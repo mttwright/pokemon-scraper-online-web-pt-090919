@@ -34,7 +34,7 @@ class Pokemon
     SQL
     
     pokemon_array = db.execute(sql, id).first
-    self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], db)
+    self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], db: db)
   end
   
   
