@@ -18,6 +18,7 @@ class Pokemon
     SQL
     
     db.execute(sql, name, type)
+    new.id = db.execute()
   end
   
   
