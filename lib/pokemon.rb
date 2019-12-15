@@ -9,6 +9,12 @@ class Pokemon
     self.db = db
   end
   
+  def save
+    sql = <<-SQL
+      INSERT INTO 
+    SQL
+  end
+  
   
   
 end
