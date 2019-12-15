@@ -15,7 +15,7 @@ class Pokemon
       VALUES (?, ?);
     SQL
     
-    
+    self.db.execute(sql, self.name, self.type)
   end
   
   
